@@ -1,10 +1,12 @@
-import SideNav from './components/SideNav'
+import { Outlet } from 'react-router'
+import SideMenu from './components/SideMenu'
+import TopNav from './components/TopNav'
 
 function App() {
     return (
         <>
-            <div className="flex">
-                <div className="flex-3/4">Hello</div>
+            <TopNav />
+            {/* <div className="flex">
                 <ul className="flex justify-end flex-1/4">
                     <li className="inline">Search</li>
                     <li className="inline">Notifications</li>
@@ -12,8 +14,11 @@ function App() {
                     <li className="inline">Sales Scripts</li>
                     <li className="inline">Profile</li>
                 </ul>
+            </div> */}
+            <div className='flex'>
+                <SideMenu />
+                <Outlet />
             </div>
-            <SideNav />
         </>
     )
 }
